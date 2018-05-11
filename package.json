@@ -13,5 +13,8 @@
     "extension"
   ],
   "author": "Jay Harris",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "bulma": "^0.7.1"
+  }
 }
