@@ -9,7 +9,8 @@ const getPassword = () => {
       passwordText.value = xhr.response;
     }
   };
-  xhr.open("GET", "https://xkcd-password.herokuapp.com", true);
+  //  xhr.open("GET", "https://xkcd-password.herokuapp.com", true);
+  xhr.open("GET", "http://localhost:9292", true);
   xhr.send();
 };
 
