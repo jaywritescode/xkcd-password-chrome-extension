@@ -1,4 +1,5 @@
 import './index.html';
+import './index.scss';
 
 const passwordText = document.getElementById('xkcd-password');
 const reloadBtn = document.getElementById('get-password');

@@ -1,4 +1,5 @@
 import './index.html';
+import './index.scss';
 
 const input = document.getElementById('functionInput');
 const saveButton = document.getElementById('saveButton');
