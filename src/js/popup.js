@@ -16,6 +16,7 @@ const getPassword = () => {
   xhr.send();
 };
 
+// TODO: default transform function
 function transform(words, callback) {
   chrome.storage.local.get('transform', (data) => {
     let fn = Function('words', `"use strict";return ${data.transform};`);
