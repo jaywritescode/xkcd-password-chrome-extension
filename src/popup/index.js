@@ -1,3 +1,5 @@
+import './index.html';
+
 const passwordText = document.getElementById('xkcd-password');
 const reloadBtn = document.getElementById('get-password');
 const copyBtn = document.getElementById('copy');

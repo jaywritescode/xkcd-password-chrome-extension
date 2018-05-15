@@ -1,3 +1,5 @@
+import './index.html';
+
 const input = document.getElementById('functionInput');
 const saveButton = document.getElementById('saveButton');
 
