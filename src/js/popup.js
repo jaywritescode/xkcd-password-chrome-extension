@@ -6,13 +6,22 @@ const getPassword = () => {
   xhr.responseType = "json";
   xhr.onload = () => {
     if (xhr.status == 200) {
-      passwordText.value = xhr.response;
+      transform(xhr.response, (value) => {
+        passwordText.value = value;
+      });
     }
   };
   //  xhr.open("GET", "https://xkcd-password.herokuapp.com", true);
   xhr.open("GET", "http://localhost:9292", true);
   xhr.send();
 };
+
+function transform(words, callback) {
+  chrome.storage.local.get('transform', (data) => {
+    let fn = Function('words', `"use strict";return ${data.transform};`);
+    callback(fn.call(null, words));
+  });
+}
 
 window.onload = getPassword;
 reloadBtn.onclick = getPassword;

@@ -7,5 +7,6 @@
     "default_popup": "dist/popup.html"
   },
   "options_page": "dist/options.html",
+  "content_security_policy": "script-src 'unsafe-eval'",
   "manifest_version": 2
 }
