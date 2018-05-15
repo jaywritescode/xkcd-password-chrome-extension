@@ -2,7 +2,10 @@
   "name": "xkcd-password creator",
   "version": "1.0",
   "description": "creates a password in the style i prefer",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage",
+    "clipboardWrite"
+  ],
   "browser_action": {
     "default_popup": "dist/popup.html"
   },

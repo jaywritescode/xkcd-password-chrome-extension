@@ -1,5 +1,6 @@
 const passwordText = document.getElementById('xkcd-password');
 const reloadBtn = document.getElementById('get-password');
+const copyBtn = document.getElementById('copy');
 
 const getPassword = () => {
   const xhr = new XMLHttpRequest();
@@ -26,3 +27,11 @@ function transform(words, callback) {
 
 window.onload = getPassword;
 reloadBtn.onclick = getPassword;
+
+copyBtn.onclick = () => {
+  window.navigator.clipboard.writeText(passwordText.value).then(() => {
+    // TODO: better interface
+    console.log('copied successfully');
+  });
+  // TODO: handle fail condition
+};
