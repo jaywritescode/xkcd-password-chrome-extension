@@ -5,23 +5,43 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
     </head>
     <body>
-        <section class="section">
-            <div class="container">
-                <label class="label">modify function</label>
-                <div class="field has-addons">
-                    <a class="button is-static">const modify = (words) =>&nbsp;</a>
-                    <div class="control">
-                        <input id="functionInput"
-                            type="text"
-                            class="input"
-                            placeholder="words.join();" />
+        <main>
+            <header class="header">
+                <h2 class="title">xkcd-style password generator</h2>
+            </header>
+            <section class="section">
+                <div class="container">
+
+                    <!-- transform function -->
+                    <div class="field has-addons">
+                        <label class="label">modify function</label>
+                        <a class="button is-static">const modify = (words) =>&nbsp;</a>
+                        <div class="control">
+                            <input id="functionInput"
+                                type="text"
+                                class="input"
+                                placeholder="words.join();" />
+                        </div>
+                    </div>
+
+                    <!-- server url -->
+                    <div class="field has-addons">
+                        <label class="label">Server</label>
+                        <a class="button is-static">https://</a>
+                        <div class="control">
+                            <input id="urlInput" type="text" class="input" placeholder="xkcd-password.jayharris.info" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <button id="saveButton" class="button">persist</button>
+                        </div>
                     </div>
                 </div>
-                <div class="field">
-                    <button id="saveButton" class="button">persist</button>
-                </div>
-            </div>
-        </section>
+
+            </section>
+        </main>
         <script src="index.js"></script>
     </body>
 </html>
