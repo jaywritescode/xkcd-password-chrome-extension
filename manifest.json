@@ -10,6 +10,6 @@
     "default_popup": "dist/popup/index.html"
   },
   "options_page": "dist/options/index.html",
-  "content_security_policy": "script-src 'unsafe-eval'",
+  "content_security_policy": "script-src 'unsafe-eval' https://use.fontawesome.com; object-src 'self'",
   "manifest_version": 2
 }
