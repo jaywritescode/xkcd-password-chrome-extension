@@ -15,6 +15,7 @@
   ],
   "author": "Jay Harris",
   "license": "MIT",
+  "repository": "https://github.com/jaywritescode/xkcd-password-chrome-extension",
   "devDependencies": {
     "bulma": "^0.7.1",
     "css-loader": "^0.28.11",
