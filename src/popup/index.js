@@ -5,30 +5,28 @@ const passwordText = document.getElementById('xkcd-password');
 const reloadBtn = document.getElementById('get-password');
 const copyBtn = document.getElementById('copy');
 
-const getPassword = () => {
+(function() {
+  chrome.storage.local.get(['transform', 'url'], data => {
+    window.onload = getPassword(data);
+    reloadBtn.onclick = getPassword(data);
+  });
+})();
+
+const getPassword = ({transform, url = "http://xkcd-password.jayharris.info"}) => {
+  const transformFn = getTransform(transform) || Array.prototype.join;
+
   const xhr = new XMLHttpRequest();
   xhr.responseType = "json";
   xhr.onload = () => {
     if (xhr.status == 200) {
-      transform(xhr.response, (value) => {
-        passwordText.value = value;
-      });
+      passwordText.value = transformFn(xhr.response);
     }
   };
-  xhr.open("GET", "http://xkcd-password.jayharris.info", true);
+  xhr.open("GET", url, true);
   xhr.send();
-};
-
-// TODO: default transform function
-function transform(words, callback) {
-  chrome.storage.local.get('transform', (data) => {
-    let fn = Function('words', `"use strict";return ${data.transform};`);
-    callback(fn.call(null, words));
-  });
 }
 
-window.onload = getPassword;
-reloadBtn.onclick = getPassword;
+const getTransform = code => code && Function('words', `"use strict";return ${code};`);
 
 copyBtn.onclick = () => {
   window.navigator.clipboard.writeText(passwordText.value).then(() => {
