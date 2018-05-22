@@ -15,8 +15,7 @@ const getPassword = () => {
       });
     }
   };
-  //  xhr.open("GET", "https://xkcd-password.herokuapp.com", true);
-  xhr.open("GET", "http://localhost:9292", true);
+  xhr.open("GET", "http://xkcd-password.jayharris.info", true);
   xhr.send();
 };
 
