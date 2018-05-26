@@ -1,16 +1,17 @@
 import './index.html';
 import './index.scss';
 
-const transformInput = document.getElementById('functionInput');
-const urlInput = document.getElementById('urlInput');
-const saveButton = document.getElementById('saveButton');
+const transformInput = document.getElementById('transform-function');
+const urlInput = document.getElementById('url');
+const saveButton = document.getElementById('save-button');
 
 const noop = function() {};
 
 window.onload = () => {
-  chrome.storage.local.get(['transform', 'url'], (data) => {
-    if (data.transform) {
-      transformInput.value = data.transform;
+  chrome.storage.local.get(['code', 'url'], (data) => {
+    console.log('chrome.storage.local: %O', data);
+    if (data.code) {
+      transformInput.value = data.code;
     }
     if (data.url) {
       urlInput.value = data.url;
@@ -19,8 +20,11 @@ window.onload = () => {
 };
 
 saveButton.onclick = () => {
-  chrome.storage.local.set({
-    transform: transformInput.value,
+  const settings = {
+    code: transformInput.value,
     url: urlInput.value,
-  }, noop);
+  };
+
+  console.log('settings: %O', settings);
+  chrome.storage.local.set(settings, noop);
 };
