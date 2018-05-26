@@ -5,37 +5,61 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
     </head>
     <body>
-        <main>
+        <main class="main">
             <header class="header">
                 <h2 class="title">xkcd-style password generator</h2>
             </header>
+
             <section class="section">
-                <div class="container">
+                <div class="box">
 
                     <!-- transform function -->
-                    <div class="field has-addons">
-                        <label class="label">modify function</label>
-                        <a class="button is-static">const modify = (words) =>&nbsp;</a>
-                        <div class="control">
-                            <input id="functionInput"
-                                type="text"
-                                class="input"
-                                placeholder="words.join();" />
+                    <div class="field is-horizontal">
+                        <label class="label field-label">transform function</label>
+                        <div class="field-body">
+                            <div class="field is-expanded">
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <a class="button is-static code">
+                                            const transform = (words) =>
+                                        </a>
+                                    </p>
+                                    <p class="control is-expanded">
+                                        <input
+                                            class="input code"
+                                            type="text"
+                                            id="transform-function"
+                                            placeholder="words.join('')"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- server url -->
-                    <div class="field has-addons">
-                        <label class="label">Server</label>
-                        <a class="button is-static">https://</a>
-                        <div class="control">
-                            <input id="urlInput" type="text" class="input" placeholder="xkcd-password.jayharris.info" />
+                    <div class="field is-horizontal">
+                        <label class="label field-label">server</label>
+                        <div class="field-body">
+                            <div class="field is-expanded">
+                                <div class="field">
+                                    <p class="control">
+                                        <input
+                                            class="input"
+                                            type="url"
+                                            id="url"
+                                            placeholder="http://xkcd-password.jayharris.info"
+                                        />
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
+
                     <div class="field">
                         <div class="control">
-                            <button id="saveButton" class="button">persist</button>
+                            <button id="save-button" class="button">persist</button>
                         </div>
                     </div>
                 </div>
