@@ -1,17 +1,15 @@
 import './index.html';
 import './index.scss';
 import * as Babel from '@babel/standalone';
+import _ from 'lodash';
 
 const transformInput = document.getElementById('transform-function');
 const urlInput = document.getElementById('url');
 const saveButton = document.getElementById('save-button');
 const syntaxErrorHelp = document.getElementById('syntax-error');
 
-const noop = function() {};
-
 window.onload = () => {
   chrome.storage.local.get(['code', 'url'], (data) => {
-    console.log('chrome.storage.local: %O', data);
     if (data.code) {
       transformInput.value = data.code;
     }
@@ -32,7 +30,7 @@ saveButton.onclick = () => {
       url: urlInput.value,
     };
 
-    chrome.storage.local.set(settings, noop);
+    chrome.storage.local.set(settings, _.noop);
   }
   catch (e) {
     showSyntaxError();
