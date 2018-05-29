@@ -24,15 +24,21 @@
                                             const transform = (words) =>
                                         </a>
                                     </p>
-                                    <p class="control is-expanded">
+                                    <p class="control is-expanded has-icons-right">
                                         <input
                                             class="input code"
                                             type="text"
                                             id="transform-function"
                                             placeholder="words.join('')"
                                         />
+                                        <span class="icon is-right is-invisible">
+                                            <i class="fas fa-bug"></i>
+                                        </span>
                                     </p>
                                 </div>
+                                <p id="syntax-error" class="help is-invisible">
+                                    Javascript: Syntax error.
+                                </p>
                             </div>
                         </div>
                     </div>
