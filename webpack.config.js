@@ -11,6 +11,7 @@ module.exports = {
     filename: '[name]/index.js',
     path: __dirname + '/dist',
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
