@@ -1,5 +1,6 @@
 import './index.html';
 import './index.scss';
+import { storageData } from '../common/index.js';
 import * as Babel from '@babel/standalone';
 import _ from 'lodash';
 
@@ -9,7 +10,7 @@ const saveButton = document.getElementById('save-button');
 const syntaxErrorHelp = document.getElementById('syntax-error');
 
 window.onload = () => {
-  chrome.storage.local.get(['code', 'url'], (data) => {
+  chrome.storage.local.get(storageData, (data) => {
     if (data.code) {
       transformInput.value = data.code;
     }
