@@ -1,4 +1,2 @@
-export default {
-  storageData: ['code', 'url'],
-  defaultUrl: 'http://xkcd-password.jayharris.info',
-};
+export let storageData = ['code', 'url'];
+export let defaultUrl = 'http://xkcd-password.jayharris.info'

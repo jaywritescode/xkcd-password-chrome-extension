@@ -9,8 +9,6 @@ const copyBtn = document.getElementById('copy');
 
 (function() {
   chrome.storage.local.get(storageData, data => {
-    console.log(data);
-
     const { code } = data;
     const url = data.url || defaultUrl;
 
@@ -27,7 +25,6 @@ const copyBtn = document.getElementById('copy');
           passwordText.value = fn.call(xhr.response);
         }
       };
-      console.log('querying %s', url);
       xhr.open("GET", url, true);
       xhr.send();
     };
