@@ -21,8 +21,7 @@ const copyBtn = document.getElementById('copy');
       xhr.responseType = "json";
       xhr.onload = () => {
         if (xhr.status == 200) {
-          console.log('response: %O', xhr.response);
-          passwordText.value = fn.call(xhr.response);
+          passwordText.value = fn.call(this, xhr.response);
         }
       };
       xhr.open("GET", url, true);
