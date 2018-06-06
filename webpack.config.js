@@ -32,7 +32,12 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ["node_modules"],
+            },
+          },
         ],
       },
     ],
