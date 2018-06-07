@@ -10,10 +10,7 @@
 @import "bulma/sass/elements/title.sass";
 @import "bulma/sass/layout/section.sass";
 
-@font-face {
-  font-family: Hack;
-  src: url('/assets/fonts/Hack-Regular.ttf') format('ttf');
-}
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
 
 .main {
   padding: 1.5rem;
