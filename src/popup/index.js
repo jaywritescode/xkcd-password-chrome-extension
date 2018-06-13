@@ -11,7 +11,7 @@ const init = () =>  {
   chrome.storage.local.get(storageData, data => {
     const { code, url } = data;
 
-    transformFn = code ?
+    const transformFn = code ?
       Function('words', `"use strict";return ${code};`) :
       Array.prototype.join;
 
