@@ -1,2 +1,2 @@
 export let storageData = ['code', 'url'];
-export let defaultUrl = 'http://xkcd-password.jayharris.info'
+export let defaultUrl = 'https://xkcd-password.jayharris.info';
