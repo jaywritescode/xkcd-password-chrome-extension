@@ -20,7 +20,7 @@ const init = () =>  {
       xhr.responseType = "json";
       xhr.onload = () => {
         if (xhr.status == 200) {
-          passwordText.value = transformFn.call(this, xhr.response);
+          passwordText.value = transformFn.call(xhr.response);
         }
       };
       xhr.open("GET", url || defaultUrl, true);
