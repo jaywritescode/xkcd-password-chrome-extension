@@ -11,5 +11,10 @@
   },
   "options_page": "dist/options/index.html",
   "content_security_policy": "script-src 'unsafe-eval' https://use.fontawesome.com; object-src 'self'",
+  "icons": {
+    "16": "src/common/icon16.png",
+    "48": "src/common/icon48.png",
+    "128": "src/common/icon128.png"
+  },
   "manifest_version": 2
 }
