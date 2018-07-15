@@ -11,16 +11,15 @@ const init = () =>  {
   chrome.storage.local.get(storageData, data => {
     const { code, url } = data;
 
-    const transformFn = code ?
-      Function('words', `"use strict";return ${code};`) :
-      Array.prototype.join;
+    const transformFn =
+          code ? Function('words', `return ${code};`) : Array.prototype.join;
 
     const requestPassword = () => {
       const xhr = new XMLHttpRequest();
       xhr.responseType = "json";
       xhr.onload = () => {
         if (xhr.status == 200) {
-          passwordText.value = transformFn.call(xhr.response);
+          passwordText.value = transformFn.call(null, xhr.response);
         }
       };
       xhr.open("GET", url || defaultUrl, true);
