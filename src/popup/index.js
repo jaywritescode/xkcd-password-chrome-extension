@@ -7,7 +7,7 @@ const passwordText = document.getElementById('xkcd-password');
 const reloadBtn = document.getElementById('get-password');
 const copyBtn = document.getElementById('copy');
 
-const init = () =>  {
+const init = () => {
   chrome.storage.local.get(storageData, data => {
     const { code, url } = data;
 
@@ -20,6 +20,7 @@ const init = () =>  {
       xhr.onload = () => {
         if (xhr.status == 200) {
           passwordText.value = transformFn.call(null, xhr.response);
+          changeIcon('fas fa-copy');
         }
       };
       xhr.open("GET", url || defaultUrl, true);
@@ -29,6 +30,14 @@ const init = () =>  {
     reloadBtn.addEventListener('click', requestPassword);
     requestPassword();
   });
+}
+
+function changeIcon(newClass) {
+  const e = document.createElement('i');
+  e.className = newClass;
+
+  copyBtn.innerHTML = '';
+  copyBtn.appendChild(e);
 }
 
 copyBtn.onclick = () => {
